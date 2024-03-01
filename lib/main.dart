@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice/splash.dart';
+import 'package:practice/tab_bar.dart';
 
 import 'home.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         Splash.routName:(context) => Splash(),
         Home.routName:(context) => Home(),
+        TabBbar.routName:(context) => TabBbar(),
       },
 
     );

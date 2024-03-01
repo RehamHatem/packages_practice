@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:practice/tab_bar.dart';
 
 import 'home tap.dart';
+import 'package:badges/badges.dart' as badges;
 
 class Home extends StatefulWidget {
   static const String routName = "home";
@@ -37,12 +39,19 @@ class _HomeState extends State<Home> {
 
        ],
 
+
       ),
       body:tap[0] ,
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.pushNamed(context, TabBbar.routName);
+        },
         backgroundColor: Colors.white,
-        child: Icon(Icons.add_shopping_cart_outlined,color: Colors.black),
+        child: badges.Badge(
+          badgeContent: Text(''),
+
+          child: Icon(Icons.add_shopping_cart_outlined,color: Colors.black),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
@@ -67,14 +76,14 @@ class _HomeState extends State<Home> {
 
 
       bottomNavigationBar: BottomAppBar(
-        color: Colors.red,
+        color: Colors.white,
           shape: CircularNotchedRectangle(),
           notchMargin: 8,
-        height: 100,
-        padding: EdgeInsets.all(12),
+        padding: EdgeInsets.all(0),
 
         child: BottomNavigationBar(
          backgroundColor: Colors.transparent,
+          type: BottomNavigationBarType.fixed,
           elevation: 0,
           showSelectedLabels: true,
           showUnselectedLabels: true,
